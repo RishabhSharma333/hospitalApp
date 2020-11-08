@@ -24,7 +24,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bulma/css/bulma.css"
             ],
             "scripts": []
           },
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "hospital"
+    }
+  },
+  "defaultProject": "hospital",
+  "cli": {
+    "analytics": "5db0f8e3-2538-41fd-bca6-a8c8aac68141"
+  }
 }
