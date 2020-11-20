@@ -1,0 +1,60 @@
+
+<div class="container">
+    <form [formGroup]="appointmentForm" (ngSubmit)="onSubmitAppointment()">
+    <div class="rows">
+        <div class="columns">
+            <div class="column">
+                <label>
+                    First Name:
+                    <input type="text" formControlName="firstName">
+                </label> 
+            </div>
+            <div class="column">
+                <label>
+                    Last Name:
+                    <input type="text" formControlName="lastName">
+                </label>
+            </div>
+        </div>
+
+        <div class="columns">
+            <div class="column">
+                <label>
+                    Gender:
+                    <input type="text" formControlName="gender">
+                </label> 
+            </div>
+            <div class="column">
+                <label>
+                    Mobile Number:
+                    <input type="number" formControlName="mobileNumber">
+                </label>
+            </div>
+        </div>
+        <br>
+        <br>
+        
+        <div formGroupName="address">
+            <h2>Address</h2>
+          
+            <label>
+              Flat No/House No
+              <input type="text" formControlName="flatNo">
+            </label>
+          
+            <label>
+              Area/Colony
+              <input type="text" formControlName="area">
+            </label>
+            
+            <label>
+              LandMark
+              <input type="text" formControlName="landmark">
+            </label>
+        </div>
+
+
+    </div>
+    </form>
+    <button type="submit" [disabled]="!appointmentForm.valid">Submit</button>
+</div>

@@ -1,0 +1,348 @@
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+
+<div class="preloader-wrapper">
+  <div class="preloader">
+    <img src="img/preloader.gif" alt="" />
+  </div>
+</div>
+
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="#about-me">
+      Maya hospital
+    </a>
+
+    <a (click)="toggleNavbar()" #navBurger class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+      data-target="navbarBasic">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasic" class="navbar-menu" #navMenu>
+    <div class="navbar-end">
+      <a class="navbar-item" href="#about-me">
+        Home
+      </a>
+
+      <a class="navbar-item" href="#services">
+        Services
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Ask for help
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            help1
+          </a>
+          <a class="navbar-item">
+            help 2
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item">
+            Contact Us
+          </a>
+        </div>
+      </div>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Login / Register
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            Admin
+          </a>
+          <a class="navbar-item">
+            Employee
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item">
+            Register New
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+
+
+<!-- Begin Main Content -->
+<div class="main-content">
+  <!-- Begin About Me Section -->
+  <div class="section-light about-me" id="about-me">
+    <div class="container">
+      <div class="column is-12 about-me">
+        <h1 class="title has-text-centered section-title">About Me</h1>
+      </div>
+      <div class="columns is-multiline">
+        <div class="column is-6 has-vertically-aligned-content" data-aos="fade-right">
+
+          <p>
+            Showcase was built from the ground up with Bulma to be fast and
+            responsive out of the box with all source files well documented
+            for easy to customization. The Showcase template gives you a
+            personal space to share what you are all about as a creative
+            designer, developer, photographer, and more!
+          </p>
+          <br />
+          <div class="is-divider"></div>
+          <div class="columns about-links">
+            <div class="column">
+              <p class="heading">
+                <strong>Give me a ring</strong>
+              </p>
+              <p class="subheading">
+                123-456-7890
+              </p>
+            </div>
+            <div class="column">
+              <p class="heading">
+                <strong>Email Me</strong>
+              </p>
+              <p class="subheading">
+                hello@example.com
+              </p>
+            </div>
+            <div class="column">
+              <p class="heading">
+                <strong>View my portfolio</strong>
+              </p>
+              <p class="subheading">
+                example.com
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="column is-6 right-image " data-aos="fade-left">
+          <img class="is-rounded" src="https://picsum.photos/id/366/600/375" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End About Me Content -->
+  <div class="section-dark resume">
+    <div class="container">
+      <div class="columns is-multiline" data-aos="fade-in" data-aos-easing="linear">
+        <div class="column is-12 about-me">
+          <h1 class="title has-text-centered section-title">
+            View My Resume
+          </h1>
+        </div>
+        <div class="column is-10 has-text-centered is-offset-1">
+          <h2 class="subtitle">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et doloremagna aliqua
+          </h2>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Begin Services Content -->
+  <div class="section-color" style="background-color: #6678be; color: white" id="services">
+    <div class="rows">
+      <div class="column is-full about-me" data-aos="fade-in" data-aos-easing="linear">
+        <h1 class="title has-text-centered section-title" style="color: white;">Services</h1>
+        <h2 class="subtitle has-text-centered" style="color: white;">Here are our services</h2>
+        <br />
+      </div>
+      <div class="columns">
+        <div class="column has-text-centered" style="cursor: pointer;padding-left: 8%;padding-right: 4%;" data-aos="fade-in"
+            data-aos-easing="linear" (click)="bookAnAppointment()">
+            <i class="ri-calendar-todo-line ri-5x"></i>
+            <hr />
+            <h2>
+              Book an appointment
+            </h2>
+          </div>
+        <div class="column  has-text-centered" style="padding-left: 4%;padding-right: 4%;" data-aos="fade-in" data-aos-easing="linear">
+          <i class="ri-microscope-line ri-5x"></i>
+          <hr />
+          <h2>
+            24*7 Pythology
+          </h2>
+        </div>
+        <div class="column  has-text-centered" style="padding-left: 4%;padding-right: 8%;"data-aos="fade-in" data-aos-easing="linear">
+          <i class="ri-capsule-line ri-5x"></i>
+          <hr />
+          <h2>
+            24*7 Pharmacy
+          </h2>
+        </div>
+        
+      </div>
+      <div class="columns">
+        
+        <div class="column  has-text-centered" style="padding-left: 8%;padding-right: 4%; "data-aos="fade-in" data-aos-easing="linear">
+          <i class="ri-bear-smile-line  ri-5x"></i>
+          <hr />
+          <h2>
+            Child care
+          </h2>
+        </div>
+        <div class="column  has-text-centered" style="padding-left: 4%;padding-right: 4%;"data-aos="fade-in" data-aos-easing="linear">
+          <i class="ri-user-heart-line ri-5x"></i>
+          <hr />
+          <h2>
+            Women's care
+          </h2>
+        </div>
+        <div class="column  has-text-centered" style="padding-left: 4%;padding-right: 8%;"data-aos="fade-in" data-aos-easing="linear">
+          <i class="ri-home-smile-line ri-5x"></i>
+          <hr />
+          <h2>
+            Private ward
+          </h2>
+        </div>
+      </div>
+
+      
+        
+    </div>
+  </div>
+  <!-- End Services Content -->
+  <!-- Begin Skills Content -->
+  <div class="section-light skills" id="skills">
+    <div class="container">
+      <div class="columns is-multiline">
+        <div class="column is-12 about-me">
+          <h1 class="title has-text-centered section-title">Skills</h1>
+        </div>
+        <div class="column is-6" data-aos="fade-in" data-aos-easing="linear">
+          <h1>Adobe Experience Design</h1>
+          <progress class="progress" value="70" max="100">30%</progress>
+          <h1>Adobe After Effects</h1>
+          <progress class="progress" value="65" max="100">30%</progress>
+          <h1>Visual Studio Code</h1>
+          <progress class="progress" value="58" max="100">45%</progress>
+          <h1>Sketch</h1>
+          <progress class="progress" value="90" max="100">60%</progress>
+        </div>
+        <div class="column is-6" data-aos="fade-in" data-aos-easing="linear">
+          <h1>HTML</h1>
+          <progress class="progress" value="85" max="100">30%</progress>
+          <h1>CSS</h1>
+          <progress class="progress" value="95" max="100">30%</progress>
+          <h1>VueJS</h1>
+          <progress class="progress" value="70" max="100">45%</progress>
+          <h1>React</h1>
+          <progress class="progress" value="60" max="100">60%</progress>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Skills Content -->
+  <!-- Begin Work Content -->
+  <div class="section-dark my-work" id="my-work">
+    <div class="container">
+      <div class="columns is-multiline" data-aos="fade-in" data-aos-easing="linear">
+        <div class="column is-12">
+          <h1 class="title has-text-centered section-title">My Work</h1>
+        </div>
+        <div class="column is-3">
+          <a href="#">
+            <figure class="image is-2by1 work-item"
+              style="background-image: url('https://picsum.photos/320/180?image=0');"></figure>
+          </a>
+        </div>
+        <div class="column is-3">
+          <a href="#">
+            <figure class="image is-2by1 work-item"
+              style="background-image: url('https://picsum.photos/320/180?image=10');"></figure>
+          </a>
+        </div>
+        <div class="column is-3">
+          <a href="#">
+            <figure class="image is-2by1 work-item"
+              style="background-image: url('https://picsum.photos/320/180?image=20');"></figure>
+          </a>
+        </div>
+        <div class="column is-3">
+          <a href="#">
+            <figure class="image is-2by1 work-item"
+              style="background-image: url('https://picsum.photos/320/180?image=30');"></figure>
+          </a>
+        </div>
+        <div class="column is-3">
+          <a href="#">
+            <figure class="image is-2by1 work-item"
+              style="background-image: url('https://picsum.photos/320/180?image=40');"></figure>
+          </a>
+        </div>
+        <div class="column is-3">
+          <a href="#">
+            <figure class="image is-2by1 work-item"
+              style="background-image: url('https://picsum.photos/320/180?image=50');"></figure>
+          </a>
+        </div>
+        <div class="column is-3">
+          <a href="#">
+            <figure class="image is-2by1 work-item"
+              style="background-image: url('https://picsum.photos/320/180?image=60');"></figure>
+          </a>
+        </div>
+        <div class="column is-3">
+          <a href="#">
+            <figure class="image is-2by1 work-item"
+              style="background-image: url('https://picsum.photos/320/180?image=70');"></figure>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Work Content -->
+
+  <!-- Begin Contact Content -->
+  <div class="section-light contact" id="contact">
+    <div class="container">
+      <div class="columns is-multiline" data-aos="fade-in-up" data-aos-easing="linear">
+        <div class="column is-12 about-me">
+          <h1 class="title has-text-centered section-title">
+            Get in touch
+          </h1>
+        </div>
+        <div class="column is-8 is-offset-2">
+          <form action="https://formspree.io/email@example.com" method="POST">
+            <div class="field">
+              <label class="label">Name</label>
+              <div class="control has-icons-left">
+                <input class="input" type="text" placeholder="Ex. Jane Smith" name="Name" />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control has-icons-left">
+                <input class="input" type="email" placeholder="Ex. hello@arctheme.com" name="Email" />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-envelope"></i>
+                </span>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Message</label>
+              <div class="control">
+                <textarea class="textarea" placeholder="Textarea" name="Message"></textarea>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Contact Content -->
+</div>
+<!-- End Main Content -->
