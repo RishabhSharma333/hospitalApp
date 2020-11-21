@@ -15,22 +15,22 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
   navigatePatient(){
-    this.router.navigate(['../patient']);
+    this.router.navigate(['admin/patient']);
   }
   navigateDoctors(){
-    this.router.navigate(['../doctors']);
+    this.router.navigate(['admin/doctors']);
   }
   navigateStaff(){
-    this.router.navigate(['../staff']);
+    this.router.navigate(['admin/staff']);
   }
   navigateLaboratory(){
-    this.router.navigate(['../laboratory']);
+    this.router.navigate(['admin/laboratory']);
   }
   navigateReport(){
-    this.router.navigate(['../report']);
+    this.router.navigate(['admin/report']);
   }
   navigateFacility(){
-    this.router.navigate(['../facility']);
+    this.router.navigate(['admin/facility']);
   }
 
 }

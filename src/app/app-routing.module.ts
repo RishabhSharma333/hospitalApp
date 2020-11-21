@@ -5,7 +5,7 @@ import { DoctorsComponent } from './admin/doctors/doctors.component';
 import { FacilityComponent } from './admin/facility/facility.component';
 import { HomeComponent } from './admin/home/home.component';
 import { LaboratoryComponent } from './admin/laboratory/laboratory.component';
-import { PatientComponent } from './admin/patient/patient.component';
+import { PatientsComponent } from './admin/patients/patients.component';
 import { ReportComponent } from './admin/report/report.component';
 import { StaffComponent } from './admin/staff/staff.component';
 import { BookappointmentComponent } from './bookappointment/bookappointment.component';
@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent, 
     children: [
       {path: 'home', component: HomeComponent },
-      {path: 'patient',component:PatientComponent},
+      {path: 'patients',component:PatientsComponent},
       {path:'facility',component:FacilityComponent},
       {path:'staff',component:StaffComponent},
       {path:'doctors',component:DoctorsComponent},
