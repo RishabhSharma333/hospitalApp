@@ -9,6 +9,13 @@ import { TestComponent } from './test/test.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { BookappointmentComponent } from './bookappointment/bookappointment.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdminComponent } from './admin/admin.component';
+import { FrontstaffComponent } from './frontstaff/frontstaff.component';
+import { ReceptionistComponent } from './receptionist/receptionist.component';
+import { PatientComponent } from './admin/patient/patient.component';
+import { DoctorsComponent } from './admin/doctors/doctors.component';
+import { FacilityComponent } from './admin/facility/facility.component';
+import { StaffComponent } from './admin/staff/staff.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +24,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ContectComponent,
     TestComponent,
     HomepageComponent,
-    BookappointmentComponent
+    BookappointmentComponent,
+    AdminComponent,
+    FrontstaffComponent,
+    ReceptionistComponent,
+    PatientComponent,
+    DoctorsComponent,
+    FacilityComponent,
+    StaffComponent
   ],
   imports: [
     BrowserModule,

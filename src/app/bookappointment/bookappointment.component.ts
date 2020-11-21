@@ -20,6 +20,7 @@ export class BookappointmentComponent implements OnInit {
       city: new FormControl('',[Validators.required,Validators.pattern("[A-Za-z]*")]),
       landmark: new FormControl('')
     }),
+    visitReason:new FormControl('',Validators.required),
     doctorType:new FormControl(''),
     slot:new FormControl('')
   });
@@ -57,6 +58,9 @@ export class BookappointmentComponent implements OnInit {
   }
   get slot(){
     return this.appointmentForm.get('slot');
+  }
+  get visitReason(){
+    return this.appointmentForm.get('visitReason');
   }
   onSubmitAppointment(){
     console.log(this.appointmentForm);

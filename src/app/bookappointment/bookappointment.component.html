@@ -115,7 +115,8 @@
                         Select Slot(after selecting doctorType)
                         <input class="input" type="text" formControlName="slot">
                     </label>
-                    <div class="help is-danger" *ngIf="!doctorType.valid || (slot.invalid && (slot.touched||slot.dirty))">
+                    <div class="help is-danger"
+                        *ngIf="!doctorType.valid || (slot.invalid && (slot.touched||slot.dirty))">
 
                         <div *ngIf="!doctorType.touched &&! doctorType.valid">
                             select doctor first
@@ -124,14 +125,27 @@
                     </div>
                 </div>
             </div>
-            <!-- this above needs to  be completed -->
-            <br>
+            <div class="columns">
+                <div class="column">
+                    <label>
+                        Reason for visit
+                        <textarea class='textarea' type="text" formControlName="vistiReason" cols="30"
+                            rows="5"></textarea>
+                    </label>
+                    <div class="help is-danger" *ngIf="visitReason.invalid && (visitReason.touched||visitReason.dirty)">
+                        <div *ngIf="visitReason.errors.required">
+                            Visit reason is required
+                        </div>
+                        
+                    </div>
+
+                </div>
+            </div>
             <br>
 
             <div formGroupName="address">
                 <h1>Address:</h1>
                 <hr>
-
                 <div class="rows">
                     <div class="columns">
                         <div class="column">
@@ -158,7 +172,7 @@
                                 <div *ngIf="area.errors.required">
                                     Area name is required
                                 </div>
-                                
+
                                 <div *ngIf="area.errors.pattern">
                                     Not valid area name
                                 </div>
@@ -178,7 +192,7 @@
                                 <div *ngIf="city.errors.required">
                                     City name is required
                                 </div>
-                                
+
                                 <div *ngIf="city.errors.pattern">
                                     Not valid city name
                                 </div>
