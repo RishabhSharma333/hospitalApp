@@ -17,6 +17,7 @@ import { DoctorsComponent } from './admin/doctors/doctors.component';
 import { FacilityComponent } from './admin/facility/facility.component';
 import { StaffComponent } from './admin/staff/staff.component';
 import { HomeComponent } from './admin/home/home.component';
+import { ReportComponent } from './admin/report/report.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { HomeComponent } from './admin/home/home.component';
     DoctorsComponent,
     FacilityComponent,
     StaffComponent,
-    HomeComponent
+    HomeComponent,
+    ReportComponent
   ],
   imports: [
     BrowserModule,

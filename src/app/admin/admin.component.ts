@@ -6,7 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-
+// work on 
+// all patient management in and out , print reports
+// patient colors according to payment defaults
+// all room allot management
+// appointment management 
+// cash billing
+//assign nursing to wards
+//view doctors
+// view nurses
   constructor() { }
 
   ngOnInit(): void {
