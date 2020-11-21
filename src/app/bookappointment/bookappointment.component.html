@@ -9,10 +9,10 @@
                     </label>
                     <div class="help is-danger" *ngIf="firstName.invalid && (firstName.touched||firstName.dirty)">
                         <div *ngIf="firstName.errors.required">
-                            FirstName is required
+                            First Name is required
                         </div>
                         <div *ngIf="firstName.errors.minlength">
-                            Firstname must be of atlest three characters
+                            First name must be of atlest three characters
                         </div>
                         <div *ngIf="firstName.errors.pattern">
                             Not valid name
@@ -26,7 +26,7 @@
                     </label>
                     <div class="help is-danger" *ngIf="lastName.invalid && (lastName.touched||lastName.dirty)">
                         <div *ngIf="lastName.errors.required">
-                            LastName is required
+                            Last Name is required
                         </div>
                         <div *ngIf="lastName.errors.minlength">
                             lastName must be of atlest three characters
@@ -86,7 +86,7 @@
                     <div class="help is-danger"
                         *ngIf="mobileNumber.invalid && (mobileNumber.touched||mobileNumber.dirty)">
                         <div *ngIf="mobileNumber.errors.required">
-                            mobileNumber is required
+                            Mobile number is required
                         </div>
                         <div *ngIf="mobileNumber.errors.pattern">
                             Not Valid mobile number

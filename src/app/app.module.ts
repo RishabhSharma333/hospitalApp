@@ -19,6 +19,8 @@ import { StaffComponent } from './admin/staff/staff.component';
 import { HomeComponent } from './admin/home/home.component';
 import { ReportComponent } from './admin/report/report.component';
 import { PharmacistComponent } from './pharmacist/pharmacist.component';
+import { LaboratoryComponent } from './admin/laboratory/laboratory.component';
+import { StockComponent } from './admin/facility/stock/stock.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { PharmacistComponent } from './pharmacist/pharmacist.component';
     HomeComponent,
     ReportComponent,
     PharmacistComponent,
+    LaboratoryComponent,
+    StockComponent,
   ],
   imports: [
     BrowserModule,
