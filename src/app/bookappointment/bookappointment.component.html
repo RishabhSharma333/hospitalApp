@@ -1,60 +1,207 @@
-
 <div class="container">
     <form [formGroup]="appointmentForm" (ngSubmit)="onSubmitAppointment()">
-    <div class="rows">
-        <div class="columns">
-            <div class="column">
-                <label>
-                    First Name:
-                    <input type="text" formControlName="firstName">
-                </label> 
+        <div class="rows">
+            <div class="columns">
+                <div class="column">
+                    <label>
+                        First Name:
+                        <input class="input" type="text" required formControlName="firstName">
+                    </label>
+                    <div class="help is-danger" *ngIf="firstName.invalid && (firstName.touched||firstName.dirty)">
+                        <div *ngIf="firstName.errors.required">
+                            FirstName is required
+                        </div>
+                        <div *ngIf="firstName.errors.minlength">
+                            Firstname must be of atlest three characters
+                        </div>
+                        <div *ngIf="firstName.errors.pattern">
+                            Not valid name
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <label>
+                        Last Name:
+                        <input class="input" type="text" formControlName="lastName">
+                    </label>
+                    <div class="help is-danger" *ngIf="lastName.invalid && (lastName.touched||lastName.dirty)">
+                        <div *ngIf="lastName.errors.required">
+                            LastName is required
+                        </div>
+                        <div *ngIf="lastName.errors.minlength">
+                            lastName must be of atlest three characters
+                        </div>
+                        <div *ngIf="lastName.errors.pattern">
+                            Not valid mame
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="column">
-                <label>
-                    Last Name:
-                    <input type="text" formControlName="lastName">
-                </label>
-            </div>
-        </div>
+            <!-- done two -->
 
-        <div class="columns">
-            <div class="column">
-                <label>
-                    Gender:
-                    <input type="text" formControlName="gender">
-                </label> 
-            </div>
-            <div class="column">
-                <label>
-                    Mobile Number:
-                    <input type="number" formControlName="mobileNumber">
-                </label>
-            </div>
-        </div>
-        <br>
-        <br>
-        
-        <div formGroupName="address">
-            <h2>Address</h2>
-          
-            <label>
-              Flat No/House No
-              <input type="text" formControlName="flatNo">
-            </label>
-          
-            <label>
-              Area/Colony
-              <input type="text" formControlName="area">
-            </label>
-            
-            <label>
-              LandMark
-              <input type="text" formControlName="landmark">
-            </label>
-        </div>
+            <div class="columns">
+                <div class="column ">
+
+                    <div class="columns">
+                        <div class="column">
+                            <label>
+                                Age(in Years):
+                                <input class="input" type="number" formControlName="age">
+                            </label>
+                            <div class="help is-danger" *ngIf="age.invalid && (age.touched||age.dirty)">
+                                <div *ngIf="age.errors.required">
+                                    Age is required
+                                </div>
+                                <div *ngIf="age.errors.pattern">
+                                    Not valid age
+                                </div>
+                            </div>
+                        </div>
 
 
-    </div>
+
+                        <div class="column">
+
+                            <h1>Select Gender:</h1>
+                            <div class="select ">
+                                <select formControlName="gender">
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <div class="column">
+                    <label>
+                        Mobile Number:
+                        <input class="input" type="text" formControlName="mobileNumber">
+                    </label>
+                    <div class="help is-danger"
+                        *ngIf="mobileNumber.invalid && (mobileNumber.touched||mobileNumber.dirty)">
+                        <div *ngIf="mobileNumber.errors.required">
+                            mobileNumber is required
+                        </div>
+                        <div *ngIf="mobileNumber.errors.pattern">
+                            Not Valid mobile number
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <div class="columns">
+                <div class="column">
+                    <label>
+                        Doctor Type:
+                        <input class="input" type="text" formControlName="doctorType">
+                    </label>
+                    <!-- <div class="help is-danger" *ngIf="doctorType.invalid && (doctorType.touched||doctorType.dirty)">
+                        <div *ngIf="doctorType.errors.required">
+                            doctorType is required
+                        </div>
+                        
+                    </div> -->
+                </div>
+                <div class="column">
+                    <label>
+                        Select Slot(after selecting doctorType)
+                        <input class="input" type="text" formControlName="slot">
+                    </label>
+                    <div class="help is-danger" *ngIf="!doctorType.valid || (slot.invalid && (slot.touched||slot.dirty))">
+
+                        <div *ngIf="!doctorType.touched &&! doctorType.valid">
+                            select doctor first
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- this above needs to  be completed -->
+            <br>
+            <br>
+
+            <div formGroupName="address">
+                <h1>Address:</h1>
+                <hr>
+
+                <div class="rows">
+                    <div class="columns">
+                        <div class="column">
+                            <label>
+                                Flat No/House No:
+                                <input class="input" type="text" formControlName="flatNo">
+                            </label>
+                            <div class="help is-danger" *ngIf="flatNo.invalid && (flatNo.touched||flatNo.dirty)">
+                                <div *ngIf="flatNo.errors.required">
+                                    Flat Number is required
+                                </div>
+                                <div *ngIf="flatNo.errors.pattern">
+                                    Not Valid flat number
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="column">
+                            <label>
+                                Area/Colony:
+                                <input class="input" type="text" formControlName="area">
+                            </label>
+                            <div class="help is-danger" *ngIf="area.invalid && (area.touched||area.dirty)">
+                                <div *ngIf="area.errors.required">
+                                    Area name is required
+                                </div>
+                                
+                                <div *ngIf="area.errors.pattern">
+                                    Not valid area name
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="rows">
+                    <div class="columns">
+                        <div class="column">
+                            <label>
+                                City:
+                                <input class="input" type="text" formControlName="city">
+                            </label>
+                            <div class="help is-danger" *ngIf="city.invalid && (city.touched||city.dirty)">
+                                <div *ngIf="city.errors.required">
+                                    City name is required
+                                </div>
+                                
+                                <div *ngIf="city.errors.pattern">
+                                    Not valid city name
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <label>
+                                Landmark
+                                <input class="input" type="text" formControlName="landmark">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- address ends -->
+
+
+
+        </div>
+        <hr>
+        <button class="button is-primary" type="submit" [disabled]="!appointmentForm.valid">Submit
+
+        </button>
     </form>
-    <button type="submit" [disabled]="!appointmentForm.valid">Submit</button>
+
 </div>

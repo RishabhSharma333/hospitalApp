@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-bookappointment',
@@ -8,25 +8,56 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class BookappointmentComponent implements OnInit {
   appointmentForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    gender:new FormControl(''),
-    phone:new FormControl(''),
+    firstName: new FormControl('',[Validators.required,Validators.minLength(3),Validators.pattern("[A-Za-z]*")]),
+    lastName: new FormControl('',[Validators.required,Validators.minLength(3),Validators.pattern("[A-Za-z]*")]),
+    gender:new FormControl('',[Validators.required]),
+    age:new FormControl('',[Validators.required,Validators.minLength(1),Validators.maxLength(3),Validators.pattern("[0-9]*")]),
+    mobileNumber:new FormControl('',[Validators.required,Validators.pattern("[6789][0-9]{9}")]),
+
     address: new FormGroup({
-      street: new FormControl(''),
-      city: new FormControl(''),
-      state: new FormControl(''),
-      zip: new FormControl('')
+      flatNo: new FormControl('',Validators.required),
+      area: new FormControl('',[Validators.required,Validators.pattern("[A-Za-z]*")]),
+      city: new FormControl('',[Validators.required,Validators.pattern("[A-Za-z]*")]),
+      landmark: new FormControl('')
     }),
     doctorType:new FormControl(''),
-    appointmentDate: new FormControl(''),
-    slot:new FormControl('Select slot')
+    slot:new FormControl('')
   });
   constructor() { }
 
-  ngOnInit(): void {// make sure to load names of doctors before making an appointment
+  ngOnInit(): void {// make sure to load names of doctors and their slots before making an appointment
   }
+  get firstName(){
+    return this.appointmentForm.get('firstName');
+  }
+  get lastName(){
+    return this.appointmentForm.get('lastName');
+  }
+  get age(){
+    return this.appointmentForm.get('age');
+  }
+  get mobileNumber(){
+    return this.appointmentForm.get('mobileNumber');
+  }
+  get flatNo(){
+    return this.appointmentForm.get('address.flatNo');
+  }
+  get area(){
+    return this.appointmentForm.get('address.area');
 
+  }
+  get city(){
+    return this.appointmentForm.get('address.city');
+  }
+  get landmark(){
+    return this.appointmentForm.get('address.landmark');
+  }
+  get doctorType(){
+    return this.appointmentForm.get('doctorType');
+  }
+  get slot(){
+    return this.appointmentForm.get('slot');
+  }
   onSubmitAppointment(){
     console.log(this.appointmentForm);
   }

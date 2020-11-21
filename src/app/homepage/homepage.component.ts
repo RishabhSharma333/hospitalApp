@@ -1,4 +1,5 @@
 import { Component, OnInit ,ViewChild,ElementRef} from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -9,7 +10,7 @@ export class HomepageComponent implements OnInit {
 
   @ViewChild('navBurger') navBurger: ElementRef;
   @ViewChild('navMenu') navMenu: ElementRef;
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +21,7 @@ export class HomepageComponent implements OnInit {
   }
   bookAnAppointment(){
     console.log("book an apppointment");
+    {this.router.navigate(['/bookappointment']);}
     
   }
 }

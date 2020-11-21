@@ -8,7 +8,7 @@ import { ContectComponent } from './contect/contect.component';
 import { TestComponent } from './test/test.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { BookappointmentComponent } from './bookappointment/bookappointment.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
