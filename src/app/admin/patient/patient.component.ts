@@ -6,7 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./patient.component.css']
 })
 export class PatientComponent implements OnInit {
-
+//all patient information
+// paid till now
+//medicines
+//reports
+//admitted
+//recently visited
+//old patient database
   constructor() { }
 
   ngOnInit(): void {

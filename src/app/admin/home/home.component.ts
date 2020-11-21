@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+// view recent activity and done by whom
+
   constructor() { }
 
   ngOnInit(): void {

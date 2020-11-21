@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./receptionist.component.css']
 })
 export class ReceptionistComponent implements OnInit {
-
+// next patient 
+// doctor patient appointment info 
+// alter doctor availability 
+// 
   constructor() { }
 
   ngOnInit(): void {
