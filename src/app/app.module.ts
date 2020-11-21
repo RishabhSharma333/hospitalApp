@@ -16,6 +16,7 @@ import { PatientComponent } from './admin/patient/patient.component';
 import { DoctorsComponent } from './admin/doctors/doctors.component';
 import { FacilityComponent } from './admin/facility/facility.component';
 import { StaffComponent } from './admin/staff/staff.component';
+import { HomeComponent } from './admin/home/home.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { StaffComponent } from './admin/staff/staff.component';
     PatientComponent,
     DoctorsComponent,
     FacilityComponent,
-    StaffComponent
+    StaffComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
