@@ -7,8 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PatientComponent implements OnInit {
   constructor() { }
-
+  public firstName :string;
+  public lastName:string;
+  public age:number;
+  public gender:String;
+  public wardAlloted:string;
+  public patientAddress:string;
+  public mobileNumber:string;
+  public patientId:string;
+  public doctorsAlloted:string[];
+  public payments:number[];
+  public bills:number[];
+  public duePayment:number;
+  public caseTypes:string[];
   ngOnInit(): void {
   }
-
+  editPatientDetails(){}
+  addBill(){}
+  makePayment(){}
 }

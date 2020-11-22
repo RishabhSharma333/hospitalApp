@@ -1,1 +1,157 @@
-<p>patient works!</p>
+<div class="card">
+    <div class="card-header">
+        <p class=card-header-title>Patient Details</p>
+    </div>
+    <div class="card-content">
+        <div class="rows">
+            <div class="columns">
+                <div class="column">
+                    <p>Name: Some random name</p>
+                </div>
+                <div class="column">
+                    <div class="row">
+                        <div class="columns">
+                            <div class="column is-one-third">
+
+                                <p> Age:43</p>
+
+                            </div>
+                            <div class="column is-two-third">
+
+                                <p>Gender: Male</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <br>
+            <div class="columns">
+                <div class="column is-5">
+
+                    <p>Mobile Number :9984865544</p>
+
+                </div>
+                <div class="column is-4">
+
+                    <p>Patient Id: 45435</p>
+
+                </div>
+                <div class="column is-3">
+
+                    <p>Ward Allotted: 54D</p>
+
+                </div>
+            </div>
+            <br>
+
+            <div class="columns">
+                <div class="column">
+
+                    <p>Patient Address :some big address to show here as well sdof sdfnvoasdifsldf;sgh</p>
+
+                </div>
+            </div>
+            <hr>
+            <div class="columns">
+                <div class="column">
+                    <label>
+                        Doctors Alloted:
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="font-weight: normal;">Doctor's Name</th>
+                                    <th style="font-weight: normal;">Date Alloted</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>random doctor</td>
+                                    <td>on 8th june</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </label>
+
+                </div>
+                <div class="column">
+                    <label>
+                        Case Type:
+                        <ul class="menu-list">
+                            <li class="menu item">
+                                case 1;
+                            </li>
+                            <li class="menu-item">
+                                case 2:
+                            </li>
+                        </ul>
+                    </label>
+                </div>
+            </div>
+            <hr>
+            <div class="columns">
+                <div class="column">
+                    <label>
+                        Bills:
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="font-weight: normal;">Bill Type</th>
+                                    <th style="font-weight: normal;">Bill Amount</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>medicine</td>
+                                    <td>2345</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </label>
+                </div>
+                <div class="column">
+                    <label>
+                        Payments Made:
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="font-weight: normal;">Payment Date</th>
+                                    <th style="font-weight: normal;">Amount</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>on 6 nov</td>
+                                    <td>4550</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </label>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <label>
+                        Due payment:
+                        <p>56543 </p>
+                    </label>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <div class="columns">
+                <div class="column">
+                    <div class="buttons">
+                        <button class="button is-info" (click)="editPatientDetails()">Edit Details</button>
+                        <button class="button is-info" (click)="addBill()">Add a Bill</button>
+                        <button class="button is-info" (click)="makePayment()">Add a Payment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
