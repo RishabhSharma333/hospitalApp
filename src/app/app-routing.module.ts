@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { DoctorsComponent } from './admin/doctors/doctors.component';
 import { FacilityComponent } from './admin/facility/facility.component';
+import { StockComponent } from './admin/facility/stock/stock.component';
 import { LaboratoryComponent } from './admin/laboratory/laboratory.component';
 import { PatientsComponent } from './admin/patients/patients.component';
 import { ReportComponent } from './admin/report/report.component';

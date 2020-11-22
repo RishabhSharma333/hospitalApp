@@ -1,6 +1,6 @@
 <div class="row">
     <div class="columns">
-        <div class="column is-one-third">
+        <div class="column is-two-fifths">
             <article class="panel is-info">
                 <p class="panel-heading">
                     Patients
@@ -28,40 +28,24 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th><abbr title="Position">Pos</abbr></th>
-                                        <th>Team</th>
-                                        <th><abbr title="Played">Pld</abbr></th>
-                                        <th><abbr title="Won">W</abbr></th>
-                                        <th><abbr title="Drawn">D</abbr></th>
-                                        <th><abbr title="Lost">L</abbr></th>
-                                        <th><abbr title="Goals for">GF</abbr></th>
-                                        
+                                        <th>Pos</th>
+                                        <th>Name</th>
+                                        <th>Gender</th>
+                                        <th>Disease(s)</th>
+                                        <th>ID</th>
+
                                     </tr>
                                 </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th><abbr title="Position">Pos</abbr></th>
-                                        <th>Team</th>
-                                        <th><abbr title="Played">Pld</abbr></th>
-                                        <th><abbr title="Won">W</abbr></th>
-                                        <th><abbr title="Drawn">D</abbr></th>
-                                        <th><abbr title="Lost">L</abbr></th>
-                                        <th><abbr title="Goals for">GF</abbr></th>
-                                        
-                                    </tr>
-                                </tfoot>
                                 <tbody>
-                                    <tr>
-                                        <th>1</th>
-                                        <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C."
-                                                title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                        </td>
-                                        <td>38</td>
-                                        <td>23</td>
-                                        <td>12</td>
-                                        <td>3</td>
-                                        <td>68</td>
+                                    <tr *ngFor="let p of patients; let i=index;"> 
+                                        <th>{{i}}</th>
+                                        <td><a (click)="RowSelected(p)"> {{p.pName}} ({{p.age}})</a></td>
+                                        <td>{{p.gender}}</td>
+                                        <td>{{p.disease}} </td>
+                                        <td>{{p.pId}}</td>
                                     </tr>
+                                    
+                                    
                                 </tbody>
                             </table>
                         </div>
@@ -71,32 +55,33 @@
                                 <a class="pagination-previous">Previous</a>
                                 <a class="pagination-next">Next page</a>
                                 <ul class="pagination-list">
-                                  <li>
-                                    <a class="pagination-link" aria-label="Goto page 1">1</a>
-                                  </li>
-                                  <li>
-                                    <span class="pagination-ellipsis">&hellip;</span>
-                                  </li>
-                                  <li>
-                                    <a class="pagination-link" aria-label="Goto page 45">45</a>
-                                  </li>
-                                  <li>
-                                    <a class="pagination-link is-current" aria-label="Page 46" aria-current="page">46</a>
-                                  </li>
-                                  <li>
-                                    <a class="pagination-link" aria-label="Goto page 47">47</a>
-                                  </li>
-                                  <li>
-                                    <span class="pagination-ellipsis">&hellip;</span>
-                                  </li>
-                                  <li>
-                                    <a class="pagination-link" aria-label="Goto page 86">86</a>
-                                  </li>
+                                    <li>
+                                        <a class="pagination-link" aria-label="Goto page 1">1</a>
+                                    </li>
+                                    <li>
+                                        <span class="pagination-ellipsis">&hellip;</span>
+                                    </li>
+                                    <li>
+                                        <a class="pagination-link" aria-label="Goto page 45">45</a>
+                                    </li>
+                                    <li>
+                                        <a class="pagination-link is-current" aria-label="Page 46"
+                                            aria-current="page">46</a>
+                                    </li>
+                                    <li>
+                                        <a class="pagination-link" aria-label="Goto page 47">47</a>
+                                    </li>
+                                    <li>
+                                        <span class="pagination-ellipsis">&hellip;</span>
+                                    </li>
+                                    <li>
+                                        <a class="pagination-link" aria-label="Goto page 86">86</a>
+                                    </li>
                                 </ul>
-                              </nav>
+                            </nav>
                         </div>
                     </div>
-                    
+
 
                 </div>
 
@@ -104,7 +89,7 @@
             </article>
         </div>
         <div class="column">
-            <app-patient></app-patient>
+            <app-patient #patient></app-patient>
         </div>
     </div>
 </div>

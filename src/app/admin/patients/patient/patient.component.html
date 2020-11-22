@@ -5,42 +5,31 @@
     <div class="card-content">
         <div class="rows">
             <div class="columns">
-                <div class="column">
-                    <p>Name: Some random name</p>
+                <div class="column is-5">
+                    <p>Name: {{firstName}}{{lastName}}</p>
                 </div>
-                <div class="column">
-                    <div class="row">
-                        <div class="columns">
-                            <div class="column is-one-third">
-
-                                <p> Age:43</p>
-
-                            </div>
-                            <div class="column is-two-third">
-
-                                <p>Gender: Male</p>
-
-                            </div>
-                        </div>
-                    </div>
+                <div class="column is-4">
+                    <p> Gender :{{gender}}</p>
                 </div>
-
+                <div class="column is-3">
+                    <p>Age :{{age}}</p>
+                </div>
             </div>
             <br>
             <div class="columns">
                 <div class="column is-5">
 
-                    <p>Mobile Number :9984865544</p>
+                    <p>Mobile Number :{{mobileNumber}}</p>
 
                 </div>
                 <div class="column is-4">
 
-                    <p>Patient Id: 45435</p>
+                    <p>Patient Id: {{patientId}}</p>
 
                 </div>
                 <div class="column is-3">
 
-                    <p>Ward Allotted: 54D</p>
+                    <p>Ward Allotted: {{wardAlloted}}</p>
 
                 </div>
             </div>
@@ -77,17 +66,20 @@
 
                 </div>
                 <div class="column">
-                    <label>
-                        Case Type:
-                        <ul class="menu-list">
-                            <li class="menu item">
-                                case 1;
-                            </li>
-                            <li class="menu-item">
-                                case 2:
-                            </li>
-                        </ul>
-                    </label>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th style="font-weight: normal;">Disease Types</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{diseaseTypes}}</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <hr>
@@ -146,8 +138,8 @@
             <div class="columns">
                 <div class="column">
                     <div class="buttons">
-                        <button class="button is-info" (click)="editPatientDetails()">Edit Details</button>
-                        <button class="button is-info" (click)="addBill()">Add a Bill</button>
+                        <button class="button is-info" (click)="toggleModal()">Edit Details</button>
+                        <button class="button is-info" (click)="toggleBillModal()">Add a Bill</button>
                         <button class="button is-info" (click)="makePayment()">Add a Payment</button>
                     </div>
                 </div>
@@ -155,3 +147,48 @@
         </div>
     </div>
 </div>
+
+
+<!-- model starts -->
+<div class="modal" [ngClass]="{ 'is-active' : isModalActive }">
+    <div class="modal-background" (click)="toggleModal()"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Edit Patient Details</p>
+            <button class="delete" aria-label="close" (click)="toggleModal()"></button>
+        </header>
+        <section class="modal-card-body">
+            <!-- Content ... -->
+            here is modal body
+            <!-- content ends -->
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button is-success" type="submit" (click)="savePatientDetails()">Save Details</button>
+            <button class="button" (click)="toggleModal()">Cancel</button>
+        </footer>
+    </div>
+</div>
+<!-- edit patient modal ends  -->
+
+<!-- mAdd bill odel starts -->
+<div class="modal" [ngClass]="{ 'is-active' : isBillModalActive }">
+    <div class="modal-background" (click)="toggleBillModal()"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Add Patient Bill</p>
+            <button class="delete" aria-label="close" (click)="toggleBillModal()"></button>
+        </header>
+        <section class="modal-card-body">
+            <!-- Content ... -->
+            here is modal body For Add Bill
+            <!-- content ends -->
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button is-success" type="submit" (click)="addBill()">Save Details</button>
+            <button class="button" (click)="toggleBillModal()">Cancel</button>
+        </footer>
+    </div>
+</div>
+<!-- edit patient modal ends  -->
+
+

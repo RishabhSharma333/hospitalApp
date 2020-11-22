@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-facility',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./facility.component.css']
 })
 export class FacilityComponent implements OnInit {
+  //medicines stock
+  //bed
+  //icu
+  //ward
+  //
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
-
+  showMedicines(){
+    this.router.navigate(['/stock']);
+  }
 }
