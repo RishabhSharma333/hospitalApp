@@ -12,16 +12,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminComponent } from './admin/admin.component';
 import { FrontstaffComponent } from './frontstaff/frontstaff.component';
 import { ReceptionistComponent } from './receptionist/receptionist.component';
-import { PatientComponent } from './admin/patient/patient.component';
 import { DoctorsComponent } from './admin/doctors/doctors.component';
 import { FacilityComponent } from './admin/facility/facility.component';
 import { StaffComponent } from './admin/staff/staff.component';
-import { HomeComponent } from './admin/home/home.component';
 import { ReportComponent } from './admin/report/report.component';
 import { PharmacistComponent } from './pharmacist/pharmacist.component';
 import { LaboratoryComponent } from './admin/laboratory/laboratory.component';
 import { StockComponent } from './admin/facility/stock/stock.component';
 import { PatientsComponent } from './admin/patients/patients.component';
+import { PatientComponent } from './admin/patients/patient/patient.component';
 
 @NgModule({
   declarations: [
@@ -34,16 +33,15 @@ import { PatientsComponent } from './admin/patients/patients.component';
     AdminComponent,
     FrontstaffComponent,
     ReceptionistComponent,
-    PatientComponent,
     DoctorsComponent,
     FacilityComponent,
     StaffComponent,
-    HomeComponent,
     ReportComponent,
     PharmacistComponent,
     LaboratoryComponent,
     StockComponent,
     PatientsComponent,
+    PatientComponent,
   ],
   imports: [
     BrowserModule,

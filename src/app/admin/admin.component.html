@@ -1,42 +1,127 @@
-<div class="row">
+<!-- <div class="row">
   <div class="columns">
     <div class="column is-one-fifth">
         <aside class="menu">
             <p class="menu-label">
-              General
-            </p>
-            <ul class="menu-list">
-              <li><a>Home</a></li>
-            </ul>
-            <p class="menu-label">
               Patients
             </p>
             <ul class="menu-list">
-              <li><a>Team Settings</a></li>
-              <li>
-                <a class="is-active">Manage Your Team</a>
-                <ul>
-                  <li><a>Members</a></li>
-                  <li><a>Plugins</a></li>
-                  <li><a>Add a member</a></li>
-                </ul>
-              </li>
-              <li><a>Invitations</a></li>
-              <li><a>Cloud Storage Environment Settings</a></li>
-              <li><a>Authentication</a></li>
+              <li><a routerLink="/patients" routerLinkActive="active">All Patients</a></li>
+              <li><a routerLink="#" routerLinkActive="active">Add new patient</a></li>
             </ul>
             <p class="menu-label">
-              Transactions
+              Doctors
             </p>
             <ul class="menu-list">
-              <li><a>Payments</a></li>
-              <li><a>Transfers</a></li>
-              <li><a>Balance</a></li>
+              <li><a routerLink="/doctors" routerLinkActive="active"> All Doctors</a></li>
+              <li><a routerLink="#" routerLinkActive="active">Add new doctor</a></li>
+            </ul>
+            <p class="menu-label">
+              Facility
+            </p>
+            <ul class="menu-list">
+              <li><a routerLink="/facility" routerLinkActive="active"> all facility</a></li>
+              <li><a routerLink="#" routerLinkActive="active"> Bed</a></li>
+              <li><a routerLink="#" routerLinkActive="active"> ICU</a></li>
+              <li><a routerLink="#" routerLinkActive="active"> Ward</a></li>
+            </ul>
+            <p class="menu-label">
+              Laboratory
+            </p>
+            <ul class="menu-list">
+              <li><a routerLink="/laboratory" routerLinkActive="active"> All lab Reports</a></li>
+              <li><a routerLink="#" routerLinkActive="active"> recent lab reports</a></li>
+            </ul>
+            <p class="menu-label">
+              Reports
+            </p>
+            <ul class="menu-list">
+              <li><a routerLink="/reports" routerLinkActive="active"> Monthly</a></li>
+              <li><a routerLink="#" routerLinkActive="active"> Annual</a></li>
+            </ul>
+            <p class="menu-label">
+              Staff
+            </p>
+            <ul class="menu-list">
+              <li><a routerLink="/staff" routerLinkActive="active"> Staff info</a></li>
+              <li><a routerLink="#" routerLinkActive="active"> add new staff</a></li>
             </ul>
           </aside>
     </div>
     <div class="column">
         <router-outlet></router-outlet>
     </div>
+  </div>
+</div> -->
+
+
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+<nav class="navbar has-shadow is-fixed-top">
+  <div class="container">
+      <div class="navbar-brand">
+          <a class="navbar-item">
+              Maya Hospital
+          </a>
+
+          <div class="navbar-burger burger" data-target="navMenu">
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
+      </div>
+      <div class="navbar-end">
+          <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+              Account
+              </a>
+              <div class="navbar-dropdown">
+                  <a class="navbar-item">
+                  Dashboard
+                  </a>
+                  <a class="navbar-item">
+                  Profile
+                  </a>
+                  <a class="navbar-item">
+                  Settings
+                  </a>
+                  <hr class="navbar-divider">
+                  <a class="navbar-item">
+                  Logout
+                  </a>
+              </div>
+          </div>
+    </div>
+  </div>
+</nav>
+
+<div class="columns">
+  <aside class="column is-2 aside hero is-fullheight">
+    <div class="container" style="width:80%">
+      <br>
+      <hr>
+      <div class="compose has-text-centered">
+        <a class="button is-danger is-block is-bold">
+          <span class="compose">Add Doctor</span>
+        </a>
+      </div>
+      <hr>
+      <div class="main">
+        <ul class="menu-list">
+          <li><a routerLink="patients" >Patients</a></li>
+          <li><a routerLink="doctors" >Doctors</a></li>
+          <li><a routerLink="facility" >Facility</a></li>
+          <li><a routerLink="laboratory" >Laboratory</a></li>
+          <li><a routerLink="staff" >Staff</a></li>
+          <li><a routerLink="report" > Montly Report</a></li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+  <div class="column">
+    <br>
+    <br>
+    <br>
+    <router-outlet></router-outlet>
   </div>
 </div>

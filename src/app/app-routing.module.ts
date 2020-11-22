@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { DoctorsComponent } from './admin/doctors/doctors.component';
 import { FacilityComponent } from './admin/facility/facility.component';
-import { HomeComponent } from './admin/home/home.component';
 import { LaboratoryComponent } from './admin/laboratory/laboratory.component';
 import { PatientsComponent } from './admin/patients/patients.component';
 import { ReportComponent } from './admin/report/report.component';
@@ -20,13 +19,13 @@ const routes: Routes = [
   {path:'bookappointment',component:BookappointmentComponent},
   { path: 'admin', component: AdminComponent, 
     children: [
-      {path: 'home', component: HomeComponent },
       {path: 'patients',component:PatientsComponent},
       {path:'facility',component:FacilityComponent},
       {path:'staff',component:StaffComponent},
       {path:'doctors',component:DoctorsComponent},
       {path:'report',component:ReportComponent},
-      {path:'laboratory',component:LaboratoryComponent}
+      {path:'laboratory',component:LaboratoryComponent},
+      {path:'',redirectTo:'patients',pathMatch:'full'}
     ]
   }
   
