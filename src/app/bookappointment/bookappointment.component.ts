@@ -7,6 +7,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./bookappointment.component.css']
 })
 export class BookappointmentComponent implements OnInit {
+  public isEdit:boolean=false;
+
   appointmentForm = new FormGroup({
     firstName: new FormControl('',[Validators.required,Validators.minLength(3),Validators.pattern("[A-Za-z]*")]),
     lastName: new FormControl('',[Validators.required,Validators.minLength(3),Validators.pattern("[A-Za-z]*")]),

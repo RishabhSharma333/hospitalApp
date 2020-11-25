@@ -8,8 +8,23 @@ import { Component, OnInit } from '@angular/core';
 export class DoctorComponent implements OnInit {
 
   constructor() { }
+  public firstName :string;
+  public lastName:string;
+  public gender:String;
+  public mobileNumber:string;
+  public doctorId:string;
+  public qualification:string;
+
+  
+  isModalActive: boolean = false;
 
   ngOnInit(): void {
   }
-
+  toggleModal(){
+    this.isModalActive=!this.isModalActive;
+  }
+  saveDoctorsDetails(){
+    
+    this.toggleModal();
+  }
 }

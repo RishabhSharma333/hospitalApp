@@ -3,6 +3,9 @@
         <p class=card-header-title>Patient Details</p>
     </div>
     <div class="card-content">
+
+
+
         <div class="rows">
             <div class="columns">
                 <div class="column is-5">
@@ -42,6 +45,14 @@
 
                 </div>
             </div>
+            <div class="columns">
+                <div class="column">
+                    <div class="buttons">
+                        <button class="button is-info" (click)="toggleModal()">Edit Details</button>
+                    </div>
+                </div>
+            </div>
+
             <hr>
             <div class="columns">
                 <div class="column">
@@ -65,6 +76,10 @@
                     </label>
 
                 </div>
+                
+            </div>
+            <hr>
+            <div class="columns">
                 <div class="column">
                     <table class="table">
                         <thead>
@@ -82,49 +97,6 @@
                     </table>
                 </div>
             </div>
-            <hr>
-            <div class="columns">
-                <div class="column">
-                    <label>
-                        Bills:
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th style="font-weight: normal;">Bill Type</th>
-                                    <th style="font-weight: normal;">Bill Amount</th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>medicine</td>
-                                    <td>2345</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </label>
-                </div>
-                <div class="column">
-                    <label>
-                        Payments Made:
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th style="font-weight: normal;">Payment Date</th>
-                                    <th style="font-weight: normal;">Amount</th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>on 6 nov</td>
-                                    <td>4550</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </label>
-                </div>
-            </div>
             <div class="columns">
                 <div class="column">
                     <label>
@@ -134,16 +106,8 @@
                 </div>
             </div>
             <br>
-            <hr>
-            <div class="columns">
-                <div class="column">
-                    <div class="buttons">
-                        <button class="button is-info" (click)="toggleModal()">Edit Details</button>
-                        <button class="button is-info" (click)="toggleBillModal()">Add a Bill</button>
-                        <button class="button is-info" (click)="makePayment()">Add a Payment</button>
-                    </div>
-                </div>
-            </div>
+            
+            
         </div>
     </div>
 </div>
@@ -158,9 +122,7 @@
             <button class="delete" aria-label="close" (click)="toggleModal()"></button>
         </header>
         <section class="modal-card-body">
-            <!-- Content ... -->
-            here is modal body
-            <!-- content ends -->
+            <app-bookappointment #bookAppointment></app-bookappointment>
         </section>
         <footer class="modal-card-foot">
             <button class="button is-success" type="submit" (click)="savePatientDetails()">Save Details</button>
@@ -170,8 +132,7 @@
 </div>
 <!-- edit patient modal ends  -->
 
-<!-- mAdd bill odel starts -->
-<div class="modal" [ngClass]="{ 'is-active' : isBillModalActive }">
+<!-- <div class="modal" [ngClass]="{ 'is-active' : isBillModalActive }">
     <div class="modal-background" (click)="toggleBillModal()"></div>
     <div class="modal-card">
         <header class="modal-card-head">
@@ -179,16 +140,11 @@
             <button class="delete" aria-label="close" (click)="toggleBillModal()"></button>
         </header>
         <section class="modal-card-body">
-            <!-- Content ... -->
-            here is modal body For Add Bill
-            <!-- content ends -->
+            
         </section>
         <footer class="modal-card-foot">
             <button class="button is-success" type="submit" (click)="addBill()">Save Details</button>
             <button class="button" (click)="toggleBillModal()">Cancel</button>
         </footer>
     </div>
-</div>
-<!-- edit patient modal ends  -->
-
-
+</div> -->

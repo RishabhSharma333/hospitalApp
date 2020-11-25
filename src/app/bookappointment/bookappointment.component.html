@@ -97,7 +97,7 @@
             <br>
             <br>
 
-            <div class="columns">
+            <div class="columns" *ngIf="!isEdit">
                 <div class="column">
                     <label>
                         Doctor Type:
@@ -125,11 +125,11 @@
                     </div>
                 </div>
             </div>
-            <div class="columns">
+            <div class="columns" *ngIf="!isEdit">
                 <div class="column">
                     <label>
                         Reason for visit
-                        <textarea class='textarea' type="text" formControlName="vistiReason" cols="30"
+                        <textarea class='textarea' type="text" formControlName="visitReason" cols="30"
                             rows="5"></textarea>
                     </label>
                     <div class="help is-danger" *ngIf="visitReason.invalid && (visitReason.touched||visitReason.dirty)">
@@ -213,7 +213,7 @@
 
         </div>
         <hr>
-        <button class="button is-primary" type="submit" [disabled]="!appointmentForm.valid">Submit
+        <button *ngIf="!isEdit" class="button is-primary" type="submit" [disabled]="!appointmentForm.valid">Submit
 
         </button>
     </form>
