@@ -56,12 +56,49 @@
             <button class="delete" aria-label="close" (click)="toggleModal()"></button>
         </header>
         <section class="modal-card-body">
-            <!-- Content ... -->
-            here is modal body
-            <!-- content ends -->
+            <form #editDoctorForm="ngForm" (ngSubmit)="onEditDoctorForm(editDoctorForm);">
+                <div class="rows">
+                    <div class="row">
+                        <label>
+                            First Name
+                            <input class="input" type="text" name="doctorsFirstName" ngModel required>
+                        </label>
+                    </div>
+                    <div class="row">
+                        <label>
+                            Last Name
+                            <input class="input" type="text" name="doctorsLastName" ngModel required>
+                        </label>
+                    </div>
+                    <div class="row">
+                        <label>
+                            Mobile Number
+                            <input class="input" type="text" name="doctorsMobileNumber" ngModel required>
+                        </label>
+                    </div>
+                    <div class="row">
+                        <label>
+                            Gender
+                            <input class="input" type="text" name="doctorsGender" ngModel required>
+                        </label>
+                    </div>
+                    <div class="row">
+                        <label>
+                        Qualification
+                            <input class="input" type="text" name="doctorsQualification" ngModel required>
+                        </label>
+                    </div>
+                    <div class="row">
+                        <label>
+                        Id
+                            <input class="input" type="text" name="doctorId" ngModel required>
+                        </label>
+                    </div>
+                </div>
+            </form>
         </section>
         <footer class="modal-card-foot">
-            <button class="button is-success" type="submit" (click)="saveDoctorsDetails()">Save Details</button>
+            <button class="button is-success" type="submit">Save Details</button>
             <button class="button" (click)="toggleModal()">Cancel</button>
         </footer>
     </div>

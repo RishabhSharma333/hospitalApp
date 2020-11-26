@@ -6,46 +6,71 @@
                     Patients
                 </p>
                 <br>
-                <p class="panel-tabs">
-                    <a class="is-active">All</a>
-                    <a>Public</a>
-                    <a>Private</a>
-                    <a>Sources</a>
-                    <a>Forks</a>
-                </p>
                 <div class="panel-block">
-                    <p class="control has-icons-left">
-                        <input class="input is-info" type="text" placeholder="Search">
-                        <span class="icon is-left">
-                            <i class="ri-search-2-line" aria-hidden="true"></i>
-                        </span>
-                    </p>
+                    <div class="row">
+                        <div class="columns">
+                            <div class="column is-11">
+                                <p class="control has-icons-left">
+                                    <input class="input is-info" type="text" [formControl]="searchField" placeholder="Search by Patient's {{searchByName ? ' Name':'Id'}}">
+                                    <span class="icon is-left">
+                                        <i class="ri-search-2-line" aria-hidden="true"></i>
+                                    </span>
+                                </p>
+                            </div>
+                            
+                            <div class="column is-1">
+                                <div class="dropdown is-hoverable">
+                                    <div class="dropdown-trigger">
+                                        <button class="button" aria-haspopup="true">
+                                            <span>Search By</span>
+                                            <span class="icon is-small">
+                                                <i class="ri-arrow-drop-down-line" aria-hidden="true"></i>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                        <div class="dropdown-content" style="width: fit-content;">
+                                            <div class="dropdown-item">
+                                                <a (click)="searchBy(1)">Patient's Name</a>
+                                            </div>
+                                            <div class="dropdown-item">
+                                                <a (click)="searchBy(2)">Patient's Id</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
 
                 <div class="panel-block">
                     <div class="rows">
                         <div class="row">
-                            <table class="table">
+                            <table class="table is-fullwidth is-stripped">
                                 <thead>
                                     <tr>
                                         <th>Pos</th>
                                         <th>Name</th>
                                         <th>Gender</th>
-                                        <th>Disease(s)</th>
+                                        <th>Father's Name</th>
                                         <th>ID</th>
 
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let p of patients; let i=index;"> 
-                                        <th>{{i}}</th>
+                                    <tr *ngFor="let p of patients; let i=index;">
+                                        <td>{{i}}</td>
                                         <td><a (click)="RowSelected(p)"> {{p.pName}} ({{p.age}})</a></td>
                                         <td>{{p.gender}}</td>
-                                        <td>{{p.disease}} </td>
+                                        <td>{{p.fathersName}}</td>
+
                                         <td>{{p.pId}}</td>
                                     </tr>
-                                    
-                                    
+
+
                                 </tbody>
                             </table>
                         </div>

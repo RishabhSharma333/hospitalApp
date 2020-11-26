@@ -22,6 +22,8 @@ import { StockComponent } from './admin/facility/stock/stock.component';
 import { PatientsComponent } from './admin/patients/patients.component';
 import { PatientComponent } from './admin/patients/patient/patient.component';
 import { DoctorComponent } from './admin/doctors/doctor/doctor.component';
+import { FilterpipePipe } from './filterpipe.pipe';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { DoctorComponent } from './admin/doctors/doctor/doctor.component';
     PatientsComponent,
     PatientComponent,
     DoctorComponent,
+    FilterpipePipe,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

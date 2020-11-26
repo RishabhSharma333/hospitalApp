@@ -19,5 +19,14 @@ export class AdminComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  addDoctor(){
+    console.log('add doctor clicked');
+  }
+  addBill(){
+    console.log('add a bill clicked');
+  }
+  addPayment(){
+    console.log('add a payment clicked');
+  }
 
 }

@@ -12,6 +12,8 @@ export class BookappointmentComponent implements OnInit {
   appointmentForm = new FormGroup({
     firstName: new FormControl('',[Validators.required,Validators.minLength(3),Validators.pattern("[A-Za-z]*")]),
     lastName: new FormControl('',[Validators.required,Validators.minLength(3),Validators.pattern("[A-Za-z]*")]),
+    fathersName:new FormControl('',[Validators.required,Validators.minLength(3)]),
+    mothersName:new FormControl('',[Validators.required,Validators.minLength(3)]),
     gender:new FormControl('',[Validators.required]),
     age:new FormControl('',[Validators.required,Validators.minLength(1),Validators.maxLength(3),Validators.pattern("[0-9]*")]),
     mobileNumber:new FormControl('',[Validators.required,Validators.pattern("[6789][0-9]{9}")]),
@@ -35,6 +37,12 @@ export class BookappointmentComponent implements OnInit {
   }
   get lastName(){
     return this.appointmentForm.get('lastName');
+  }
+  get fathersName(){
+    return this.appointmentForm.get('fathersName');
+  }
+  get mothersName(){
+    return this.appointmentForm.get('mothersName');
   }
   get age(){
     return this.appointmentForm.get('age');

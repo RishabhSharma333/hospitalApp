@@ -1,116 +1,249 @@
 <div class="card">
-    <div class="card-header">
-        <p class=card-header-title>Patient Details</p>
-    </div>
+    <header class="card-header">
+        <p class="card-header-title" style="font-weight: 400;">
+            {{firstName}}{{lastName}} ({{age}})
+        </p>
+
+    </header>
     <div class="card-content">
-
-
-
-        <div class="rows">
-            <div class="columns">
-                <div class="column is-5">
-                    <p>Name: {{firstName}}{{lastName}}</p>
-                </div>
-                <div class="column is-4">
-                    <p> Gender :{{gender}}</p>
-                </div>
-                <div class="column is-3">
-                    <p>Age :{{age}}</p>
-                </div>
-            </div>
-            <br>
-            <div class="columns">
-                <div class="column is-5">
-
-                    <p>Mobile Number :{{mobileNumber}}</p>
-
-                </div>
-                <div class="column is-4">
-
-                    <p>Patient Id: {{patientId}}</p>
-
-                </div>
-                <div class="column is-3">
-
-                    <p>Ward Allotted: {{wardAlloted}}</p>
-
-                </div>
-            </div>
-            <br>
-
-            <div class="columns">
-                <div class="column">
-
-                    <p>Patient Address :some big address to show here as well sdof sdfnvoasdifsldf;sgh</p>
-
-                </div>
-            </div>
-            <div class="columns">
-                <div class="column">
-                    <div class="buttons">
-                        <button class="button is-info" (click)="toggleModal()">Edit Details</button>
+        <div class="content">
+            <section class="section" style="margin-top: -5rem;">
+                <div class="container">
+                    <div class="tabs " data-content-target="mainTabs">
+                        <ul>
+                            <li [ngClass]="detailsTab ? 'is-active' : 'css-class-2'" (click)="showContent(0)"
+                                style="font-weight: 600;"><a>Patient Details</a>
+                            </li>
+                            <li [ngClass]="docTab ? 'is-active' : 'css-class-2'" (click)="showContent(1)"><a>Doctors
+                                    Alloted</a>
+                            </li>
+                            <li [ngClass]="addBillTab ? 'is-active' : 'css-class-2'" (click)="showContent(2)"><a>Add A
+                                    Bill</a></li>
+                            <li [ngClass]="addPaymentTab ? 'is-active' : 'css-class-2'" (click)="showContent(3)"><a>Add
+                                    Payment</a>
+                            </li>
+                            <li [ngClass]="billTab ? 'is-active' : 'css-class-2'" (click)="showContent(4)"><a>Billing
+                                    History</a>
+                            </li>
+                            <li [ngClass]="paymentTab ? 'is-active' : 'css-class-2'" (click)="showContent(5)"><a>Payment
+                                    History</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </div>
+                <section class="section tab-content-container" id="mainTabs">
+                    <div class="tab-content" *ngIf="detailsTab">
+                        <div class="container">
+                            <div class="rows">
+                                <div class="columns">
+                                    <div class="column is-5">
+                                        <p>Name: {{firstName}}{{lastName}}</p>
+                                    </div>
+                                    <div class="column is-4">
+                                        <p> Gender :{{gender}}</p>
+                                    </div>
+                                    <div class="column is-3">
+                                        <p>Age :{{age}}</p>
+                                    </div>
+                                </div>
+                                <br>
+                               
+                                <div class="columns">
+                                    <div class="column is-5">
 
-            <hr>
-            <div class="columns">
-                <div class="column">
-                    <label>
-                        Doctors Alloted:
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th style="font-weight: normal;">Doctor's Name</th>
-                                    <th style="font-weight: normal;">Date Alloted</th>
+                                        <p>Mobile Number :{{mobileNumber}}</p>
 
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>random doctor</td>
-                                    <td>on 8th june</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </label>
+                                    </div>
+                                    <div class="column is-4">
 
-                </div>
-                
-            </div>
-            <hr>
-            <div class="columns">
-                <div class="column">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th style="font-weight: normal;">Disease Types</th>
+                                        <p>Patient Id: {{patientId}}</p>
 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>{{diseaseTypes}}</td>
+                                    </div>
+                                    <div class="column is-3">
 
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="columns">
-                <div class="column">
-                    <label>
-                        Due payment:
-                        <p>56543 </p>
-                    </label>
-                </div>
-            </div>
-            <br>
-            
-            
+                                        <p>Ward Allotted: {{wardAlloted}}</p>
+
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="columns">
+                                    <div class="column">
+                                        <p>Father's Name:{{fathersName}}</p>
+                                    </div>
+                                    <div class="column">
+                                        <p>Mothers's Name:{{mothersName}}</p>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="columns">
+                                    <div class="column">
+
+                                        <p>Patient Address :some big address to show here as well sdof
+                                            sdfnvoasdifsldf;sgh</p>
+
+                                    </div>
+                                </div>
+                                <div class="columns">
+                                    <div class="column">
+                                        <div class="buttons">
+                                            <button class="button is-info" (click)="toggleModal()">Edit Details</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr>
+                                <div class="columns">
+                                    <div class="column">
+                                        <label>
+                                            Due payment:
+                                            <p>56543 </p>
+                                        </label>
+                                    </div>
+                                </div>
+                                <br>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content" *ngIf="docTab">
+                        <div class="container">
+                            <p style="font-size: large;">Doctors Alloted</p>
+                            <ul>
+                                <li>
+                                    <p>doctor 1</p>
+                                </li>
+                                <li>
+                                    <p>
+                                        doctor 2
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" *ngIf="addBillTab">
+                        <form #billForm="ngForm" (ngSubmit)="onSubmitBillForm(billForm);">
+                            <div class="columns">
+                                <div class="column">
+                                    <label>
+                                        Bill Type
+                                        <input class="input" type="text" name="billType" ngModel required>
+                                    </label>
+                                </div>
+                                <div class="column">
+                                    <label>
+                                        Bill Amount
+                                        <input class="input" type="number" name="billAmount" ngModel required>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="columns">
+                                <div class="column is-half">
+                                    <label>Billing Date</label>
+                                    <input type="date" class="input" name=billDate ngModel required>
+                                </div>
+
+                            </div>
+                            <div class="columns">
+                                <div class="column">
+                                    <div class="buttons"><button class="button is-primary" type="submit">Add
+                                            Bill</button>
+                                        <button class="button">Clear</button>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-content" *ngIf="addPaymentTab">
+                        <form #paymentForm="ngForm" (ngSubmit)="onSubmitPaymentForm(paymentForm);">
+                            <div class="columns">
+                                <div class="column is-half">
+                                    <label>
+                                        Payment Amount
+                                        <input class="input" type="number" name="paymentAmount" ngModel required>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="columns">
+                                <div class="column is-half">
+                                    <label>Payment Date</label>
+                                    <input class="input " type="date" name="paymentDate" ngModel required>
+                                </div>
+                            </div>
+
+                            <div class="columns">
+                                <div class="column">
+                                    <div class="buttons">
+                                        <button class="button is-primary" type="submit">Add Payment</button>
+                                        <button class="button">Clear</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-content" *ngIf="billTab">
+                        <div class="container">
+                            <h5 class="subtitle">Billing History </h5>
+                            <div class="table is-bordered is-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Bill type</th>
+                                        <th>date</th>
+                                        <th>amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            medicine
+                                        </td>
+                                        <td>on 4th nov</td>
+                                        <td>300</td>
+                                    </tr>
+                                </tbody>
+                            </div>
+                           <label> Total Bill:
+                               <p>6533</p>
+                           </label>
+                        </div>
+                    </div>
+                    <div class="tab-content" *ngIf="paymentTab">
+                        <div class="container">
+                            <h5 class="subtitle">Payment History </h5>
+                            <div class="table is-stripped">
+                                <thead>
+                                    <tr>
+                                        <th>Payment date</th>
+                                        <th>amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>on 4th nov</td>
+                                        <td>3000</td>
+                                    </tr>
+                                </tbody>
+                            </div>
+                            <label>Total Payment Made:
+                                <p>5463</p>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+            </section>
         </div>
     </div>
 </div>
+
+
+
+
+
 
 
 <!-- model starts -->

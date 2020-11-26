@@ -1,6 +1,7 @@
 <div class="container">
     <form [formGroup]="appointmentForm" (ngSubmit)="onSubmitAppointment()">
         <div class="rows">
+            
             <div class="columns">
                 <div class="column">
                     <label>
@@ -38,6 +39,36 @@
                 </div>
             </div>
             <!-- done two -->
+            <div class="columns">
+                <div class="column">
+                    <label>
+                        Father's Name:
+                        <input class="input" type="text" required formControlName="fathersName">
+                    </label>
+                    <div class="help is-danger" *ngIf="fathersName.invalid && (fathersName.touched||fathersName.dirty)">
+                        <div *ngIf="fathersName.errors.required">
+                            Father's Name is required
+                        </div>
+                        <div *ngIf="fathersName.errors.minlength">
+                            Father's name must be of atlest three characters
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <label>
+                        Mother's Name:
+                        <input class="input" type="text" formControlName="mothersName">
+                    </label>
+                    <div class="help is-danger" *ngIf="mothersName.invalid && (mothersName.touched||mothersName.dirty)">
+                        <div *ngIf="mothersName.errors.required">
+                            Mother's Name is required
+                        </div>
+                        <div *ngIf="mothersName.errors.minlength">
+                            Mother's Name must be of atlest three characters
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="columns">
                 <div class="column ">

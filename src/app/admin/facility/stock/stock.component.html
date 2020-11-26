@@ -1,1 +1,87 @@
-<p>stock works!</p>
+<article class="panel is-primary">
+    <p class="panel-heading">
+        Stock
+    </p>
+    <br>
+
+    <div class="panel-block">
+        <div class="rows">
+            <div class="columns">
+                <div class="column is-9">
+                    <p class="control has-icons-left">
+                        <input class="input is-info" type="text" [formControl]="searchStockField"
+                            placeholder="Search {{searchMedicine ? ' Medicine':'Other Stock'}}">
+                        <span class="icon is-left">
+                            <i class="ri-search-2-line" aria-hidden="true"></i>
+                        </span>
+                    </p>
+                </div>
+    
+                <div class="column is-3">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                            <button class="button" aria-haspopup="true">
+                                <span>Search By</span>
+                                <span class="icon is-small">
+                                    <i class="ri-arrow-drop-down-line" aria-hidden="true"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                            <div class="dropdown-content" style="width: fit-content;">
+                                <div class="dropdown-item">
+                                    <a (click)="searchBy(1)">Medicines</a>
+                                </div>
+                                <div class="dropdown-item">
+                                    <a (click)="searchBy(2)">Other Stock</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <table *ngIf="searchMedicine" class="table is-fullwidth">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Qualtity Left</th>
+            
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let m of medicines; let i=index;">
+                                
+                                <td>{{m.name}}</td>
+                                <td>{{m.numberLeft}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+            
+                    <table *ngIf="searchOtherStock" class="table is-fullwidth">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Qualtity Left</th>
+            
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let m of otherStocks; let i=index;">
+                                
+                                <td>{{m.name}}</td>
+                                <td>{{m.numberLeft}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <hr>
+        
+
+
+    </div>
+</article>

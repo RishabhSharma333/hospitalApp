@@ -1,53 +1,102 @@
 <div class="row">
     <div class="columns">
         <div class="column">
-            <div  style="cursor: pointer;"class="card">
-                <header class="card-header">
-                    <p class="card-header-title">
-                        Stock(Medicines)
-                    </p>
-                </header>
-                <div class="card-content">
-                    <div class="content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.</p>
-
-                        <p>sabout medicine emp</p>
-                    </div>
-                </div>
-            </div>
+            <app-stock></app-stock>
         </div>
         <div class="column">
-            <div class="card">
-                <header class="card-header">
-                    <p class="card-header-title">
-                        Beds
-                    </p>
-                </header>
-                <div class="card-content">
-                    <div class="content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.</p>
+            <article class="panel is-primary">
+                <p class="panel-heading">
+                    Bed
+                </p>
+                <br>
+                <div class="panel-block">
+                    <div class="rows" style="width: 100%;">
+                        <div class="row">
+                            <p class="control has-icons-left">
+                                <input class="input is-info" type="text" [formControl]="searchBedField"
+                                    placeholder="Search Bed">
+                                <span class="icon is-left">
+                                    <i class="ri-search-2-line" aria-hidden="true"></i>
+                                </span>
+                            </p>
+                        </div>
 
-                        <p>so many beds emp</p>
+                        <br>
+
+                        <div class="row">
+                            <table class="table is-fullwidth">
+                                <thead>
+                                    <tr>
+                                        <th>Bed</th>
+                                        <th>Ward</th>
+                                        <th>Occupied By</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let m of beds; let i=index;">
+
+                                        <td>{{m.bedId}}</td>
+                                        <td>{{m.ward}}</td>
+                                        <td>{{m.occupied!=''?m.occupied:'---'}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
+
+
+
                 </div>
-            </div>
+            </article>
         </div>
         <div class="column">
 
-            <div class="card">
-                <header class="card-header">
-                    <p class="card-header-title">
-                        Ward
-                    </p>
-                </header>
-                <div class="card-content">
-                    <div class="content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.</p>
-
-                        <p>so many wards emp</p>
+            <article class="panel is-primary">
+                <p class="panel-heading">
+                    Ward
+                </p>
+                <br>
+                <div class="panel-block">
+                    <div class="rows" style="width: 100%;">
+                        <div class="row">
+                            <p class="control has-icons-left">
+                                <input class="input is-info" type="text" [formControl]="searchWardField"
+                                    placeholder="Search Ward">
+                                <span class="icon is-left">
+                                    <i class="ri-search-2-line" aria-hidden="true"></i>
+                                </span>
+                            </p>
+                        </div>
+                        <br>
+    
+                        <div class="row is-fullwidth">
+                            <table class="table is-fullwidth">
+                                <thead>
+                                    <tr>
+                                        <th>Ward</th>
+                                        <th>No Of Beds</th>
+                                        <th>Occupied Beds</th>
+    
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let m of wards; let i=index;">
+    
+                                        <td>{{m.wardName}}</td>
+                                        <td>{{m.noOfBeds}}</td>
+                                        <td>{{m.occupiedBeds}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+    
                     </div>
+                   
+
+
                 </div>
-            </div>
+            </article>
         </div>
     </div>
 </div>
