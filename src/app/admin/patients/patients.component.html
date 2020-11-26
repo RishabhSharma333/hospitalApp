@@ -11,7 +11,7 @@
                         <div class="columns">
                             <div class="column is-11">
                                 <p class="control has-icons-left">
-                                    <input class="input is-info" type="text" [formControl]="searchField" placeholder="Search by Patient's {{searchByName ? ' Name':'Id'}}">
+                                    <input class="input is-info" type="search"  placeholder="Search by Patient's {{searchByName ? ' Name':'Id'}}" [(ngModel)]=searchField>
                                     <span class="icon is-left">
                                         <i class="ri-search-2-line" aria-hidden="true"></i>
                                     </span>
@@ -61,16 +61,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let p of patients; let i=index;">
+                                    <tr *ngFor="let p of patients | filter : searchField :(searchByName?1:2); let i=index;">
                                         <td>{{i}}</td>
-                                        <td><a (click)="RowSelected(p)"> {{p.pName}} ({{p.age}})</a></td>
+                                        <td><a (click)="RowSelected(p)"> {{p.name}} ({{p.age}})</a></td>
                                         <td>{{p.gender}}</td>
                                         <td>{{p.fathersName}}</td>
-
-                                        <td>{{p.pId}}</td>
+                                        <td>{{p.id}}</td>
                                     </tr>
-
-
                                 </tbody>
                             </table>
                         </div>

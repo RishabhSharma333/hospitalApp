@@ -13,8 +13,8 @@
                     <div class="rows" style="width: 100%;">
                         <div class="row">
                             <p class="control has-icons-left">
-                                <input class="input is-info" type="text" [formControl]="searchBedField"
-                                    placeholder="Search Bed">
+                                <input class="input is-info" type="text" 
+                                    placeholder="Search Bed" [(ngModel)]=searchBed>
                                 <span class="icon is-left">
                                     <i class="ri-search-2-line" aria-hidden="true"></i>
                                 </span>
@@ -34,9 +34,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let m of beds; let i=index;">
+                                    <tr *ngFor="let m of beds | filter : searchBed :2; let i=index;">
 
-                                        <td>{{m.bedId}}</td>
+                                        <td>{{m.id}}</td>
                                         <td>{{m.ward}}</td>
                                         <td>{{m.occupied!=''?m.occupied:'---'}}</td>
                                     </tr>
@@ -61,8 +61,8 @@
                     <div class="rows" style="width: 100%;">
                         <div class="row">
                             <p class="control has-icons-left">
-                                <input class="input is-info" type="text" [formControl]="searchWardField"
-                                    placeholder="Search Ward">
+                                <input class="input is-info" type="text" 
+                                    placeholder="Search Ward" [(ngModel)]=searchWard>
                                 <span class="icon is-left">
                                     <i class="ri-search-2-line" aria-hidden="true"></i>
                                 </span>
@@ -70,7 +70,7 @@
                         </div>
                         <br>
     
-                        <div class="row is-fullwidth">
+                        <div class="row is-fullwidth" >
                             <table class="table is-fullwidth">
                                 <thead>
                                     <tr>
@@ -81,9 +81,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let m of wards; let i=index;">
+                                    <tr *ngFor="let m of wards | filter : searchWard : 1; let i=index;">
     
-                                        <td>{{m.wardName}}</td>
+                                        <td>{{m.name}}</td>
                                         <td>{{m.noOfBeds}}</td>
                                         <td>{{m.occupiedBeds}}</td>
                                     </tr>

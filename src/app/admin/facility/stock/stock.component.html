@@ -9,8 +9,8 @@
             <div class="columns">
                 <div class="column is-9">
                     <p class="control has-icons-left">
-                        <input class="input is-info" type="text" [formControl]="searchStockField"
-                            placeholder="Search {{searchMedicine ? ' Medicine':'Other Stock'}}">
+                        <input class="input is-info" type="search" 
+                            placeholder="Search {{searchMedicine ? ' Medicine':'Other Stock'}}" [(ngModel)]=searchStock>
                         <span class="icon is-left">
                             <i class="ri-search-2-line" aria-hidden="true"></i>
                         </span>
@@ -51,7 +51,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let m of medicines; let i=index;">
+                            <tr *ngFor="let m of medicines | filter : searchStock :1 ; let i=index;">
                                 
                                 <td>{{m.name}}</td>
                                 <td>{{m.numberLeft}}</td>
@@ -68,7 +68,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let m of otherStocks; let i=index;">
+                            <tr *ngFor="let m of otherStocks| filter : searchStock :1; let i=index;">
                                 
                                 <td>{{m.name}}</td>
                                 <td>{{m.numberLeft}}</td>

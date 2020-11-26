@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-stock',
@@ -9,7 +8,7 @@ import { FormControl } from '@angular/forms';
 export class StockComponent implements OnInit {
 
   constructor() { }
-  searchStockField:FormControl;
+  searchStock:string;
   searchMedicine:boolean;
   searchOtherStock:boolean;
   medicines:any[]=[
@@ -33,7 +32,6 @@ export class StockComponent implements OnInit {
   ngOnInit(): void {
     this.searchMedicine=true;
     this.searchOtherStock=false;
-    this.searchStockField=new FormControl();
   }
   searchBy(num:number){
     if(num==1){

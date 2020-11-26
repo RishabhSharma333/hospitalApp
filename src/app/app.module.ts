@@ -10,20 +10,19 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { BookappointmentComponent } from './bookappointment/bookappointment.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminComponent } from './admin/admin.component';
-import { FrontstaffComponent } from './frontstaff/frontstaff.component';
 import { ReceptionistComponent } from './receptionist/receptionist.component';
 import { DoctorsComponent } from './admin/doctors/doctors.component';
 import { FacilityComponent } from './admin/facility/facility.component';
 import { StaffComponent } from './admin/staff/staff.component';
 import { ReportComponent } from './admin/report/report.component';
-import { PharmacistComponent } from './pharmacist/pharmacist.component';
 import { LaboratoryComponent } from './admin/laboratory/laboratory.component';
 import { StockComponent } from './admin/facility/stock/stock.component';
 import { PatientsComponent } from './admin/patients/patients.component';
 import { PatientComponent } from './admin/patients/patient/patient.component';
 import { DoctorComponent } from './admin/doctors/doctor/doctor.component';
-import { FilterpipePipe } from './filterpipe.pipe';
 import { FilterPipe } from './filter.pipe';
+import { FrontstaffComponent } from './frontstaff/frontstaff.component';
+import { ReceiptComponent } from './medicineshop/receipt/receipt.component';
 
 @NgModule({
   declarations: [
@@ -34,20 +33,19 @@ import { FilterPipe } from './filter.pipe';
     HomepageComponent,
     BookappointmentComponent,
     AdminComponent,
-    FrontstaffComponent,
     ReceptionistComponent,
     DoctorsComponent,
     FacilityComponent,
     StaffComponent,
     ReportComponent,
-    PharmacistComponent,
     LaboratoryComponent,
     StockComponent,
     PatientsComponent,
     PatientComponent,
     DoctorComponent,
-    FilterpipePipe,
     FilterPipe,
+    FrontstaffComponent,
+    ReceiptComponent
   ],
   imports: [
     BrowserModule,

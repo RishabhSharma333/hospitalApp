@@ -5,8 +5,15 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(value: any, input: string, mode: number): any {
+    if (input) {
+      if (mode == 1)
+        return value.filter(val => val.name.toLowerCase().indexOf(input.toLowerCase()) >= 0);
+      else
+        return value.filter(val => val.id.toLowerCase().indexOf(input.toLowerCase()) >= 0);
+    }
+    else {
+      return value;
+    }
   }
-
 }
