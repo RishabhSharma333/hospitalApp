@@ -8,8 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class ReceiptComponent implements OnInit {
 
   constructor() { }
-
+  receipt:any[]=[];
   ngOnInit(): void {
+  }
+  push(value:any,num:number){
+    if(num==1){
+    this.receipt.push(value);
+    }
+    else{
+      this.receipt.push(value);
+    }
   }
 
 }

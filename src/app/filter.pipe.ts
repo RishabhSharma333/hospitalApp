@@ -9,8 +9,10 @@ export class FilterPipe implements PipeTransform {
     if (input) {
       if (mode == 1)
         return value.filter(val => val.name.toLowerCase().indexOf(input.toLowerCase()) >= 0);
-      else
-        return value.filter(val => val.id.toLowerCase().indexOf(input.toLowerCase()) >= 0);
+      else if(mode==3)
+        return value.filter(val=>val.formula.toLowerCase().indexOf(input.toLowerCase())>=0);
+      else 
+      return value.filter(val => val.id.toLowerCase().indexOf(input.toLowerCase()) >= 0);
     }
     else {
       return value;

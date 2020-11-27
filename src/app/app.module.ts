@@ -23,6 +23,7 @@ import { DoctorComponent } from './admin/doctors/doctor/doctor.component';
 import { FilterPipe } from './filter.pipe';
 import { FrontstaffComponent } from './frontstaff/frontstaff.component';
 import { ReceiptComponent } from './medicineshop/receipt/receipt.component';
+import { MedicineshopComponent } from './medicineshop/medicineshop.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,9 @@ import { ReceiptComponent } from './medicineshop/receipt/receipt.component';
     DoctorComponent,
     FilterPipe,
     FrontstaffComponent,
+    MedicineshopComponent,
     ReceiptComponent
+    
   ],
   imports: [
     BrowserModule,
