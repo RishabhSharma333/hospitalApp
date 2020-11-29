@@ -13,6 +13,7 @@ import { ContectComponent } from './contect/contect.component';
 import { FrontstaffComponent } from './frontstaff/frontstaff.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { MedicineshopComponent } from './medicineshop/medicineshop.component';
+import { ReceptionistComponent } from './receptionist/receptionist.component';
 import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path:'test', component:TestComponent},
   {path:'homepage', component:HomepageComponent},
   {path:'bookappointment',component:BookappointmentComponent},
+  {path:'receptionist',component:ReceptionistComponent},
   { path: 'admin', component: AdminComponent, 
     children: [
       {path: 'patients',component:PatientsComponent},

@@ -2,7 +2,6 @@
 <div class="row">
     <div class="columns">
         <div class="column is-5">
-
             <article class="panel">
                 <p class="panel-heading">
                     Medicines And Other Stock
@@ -45,7 +44,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                             <div class="column">
                                 <div class="dropdown is-hoverable is-warning">
@@ -71,7 +69,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <div class="panel-block" *ngIf="searchMedicineByName">
 
@@ -85,50 +82,42 @@
                                 <th>Modify Stock</th>
                             </tr>
                         </thead>
-
                         <tbody>
-
-                            <tr *ngFor="let medicine of medicines|filter : searchField:1" style="cursor: copy; "
-                                (click)="addMedicineToReceipt(medicine)">
+                            <tr *ngFor="let medicine of medicines|filter : searchField:1"  style="cursor:copy;" (click)="addItemToReceipt(medicine)">
                                 <td>{{medicine.name}}</td>
                                 <td>{{medicine.pricePerPiece}}</td>
                                 <td>{{medicine.stockLeft}}</td>
                                 <td>{{medicine.formula}}</td>
-                                <td><button class="button">Modify</button></td>
+                                <td><button class="button" (click)="modifyMedicine(medicine)" >Modify</button></td>
                             </tr>
-
                         </tbody>
                     </table>
                 </div>
                 <div class="panel-block" *ngIf="searchOtherStock">
-
                     <table class="table is-hoverable is-fullwidth ">
                         <thead>
                             <tr>
-                                <th>Stock's Name</th>
+                                <th>Item's Name</th>
                                 <th>Price Per Piece</th>
                                 <th>Stock Left</th>
-                                <th>Property</th>
+                                <th>Property/Details</th>
                                 <th>Modify Stock</th>
                             </tr>
                         </thead>
-
                         <tbody>
-
                             <tr *ngFor="let otherStock of otherStocks|filter : searchField : 1" style="cursor: copy;"
-                                (click)="addStockToReceipt(otherStock)">
+                                (click)="addItemToReceipt(otherStock)">
                                 <td>{{otherStock.name}}</td>
                                 <td>{{otherStock.pricePerPiece}}</td>
                                 <td>{{otherStock.stockLeft}}</td>
                                 <td>{{otherStock.formula}}</td>
-                                <td><button class="button">Modify</button></td>
+                                <td><button class="button" (click)="modifyItem(otherStock)">Modify</button></td>
                             </tr>
 
                         </tbody>
                     </table>
                 </div>
                 <div class="panel-block" *ngIf="searchMedicineByFormula">
-
                     <table class="table is-hoverable is-fullwidth">
                         <thead>
                             <tr>
@@ -139,30 +128,64 @@
                                 <th>Modify Stock</th>
                             </tr>
                         </thead>
-
                         <tbody>
-
                             <tr *ngFor="let medicine of medicines|filter : searchField : 3" style="cursor: copy; "
-                                (click)="addMedicineToReceipt(medicine)">
+                                (click)="addItemToReceipt(medicine)">
                                 <td>{{medicine.name}}</td>
                                 <td>{{medicine.pricePerPiece}}</td>
                                 <td>{{medicine.stockLeft}}</td>
                                 <td>{{medicine.formula}}</td>
-                                <td><button class="button">Modify</button></td>
+                                <td><button class="button" style="pointer-events: auto;" (click)="modifyMedicine(medicine)">Modify</button></td>
                             </tr>
 
                         </tbody>
                     </table>
                 </div>
-
             </article>
-
-
-
         </div>
         <div class="column is-7">
             <app-receipt></app-receipt>
 
         </div>
+    </div>
+</div>
+
+<!-- modal starts -->
+<div class="modal" [ngClass]="{ 'is-active' : isModalActive }">
+    <div class="modal-background" (click)="toggleModal()"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Edit {{searchOtherStock?'Item':'Medicine'}} Details</p>
+            <button class="delete" aria-label="close" (click)="toggleModal()"></button>
+        </header>
+        <section class="modal-card-body">
+            <form #editMedicineStockForm="ngForm" (ngSubmit)="onEditMedicineStockForm(editMedicineStockForm);">
+                <div class="rows">
+                    <div class="row">
+                        <label>
+                            {{modalMedicine?'Medicine Name':'Item Name'}}
+                            <input class="input" type="text" >
+                        </label>
+                    </div>
+                    <div class="row">
+                        <label>
+                            {{modalMedicine?'Medicine Price Per Piece':'Item Price Per Piece'}}
+                            <input class="input" type="number"  >
+                        </label>
+                    </div>
+                    <div class="row">
+                        <label>
+                            {{modalMedicine?'Medicine Formula':'Item Details/Property'}}
+                            <input class="input" type="text"  >
+                        </label>
+                    </div>
+                   
+                </div>
+            </form>
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button is-success" type="submit" >Save Details</button>
+            <button class="button" (click)="toggleModal()">Cancel</button>
+        </footer>
     </div>
 </div>

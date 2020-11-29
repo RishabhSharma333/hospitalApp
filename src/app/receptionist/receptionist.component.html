@@ -1,1 +1,184 @@
-<p>receptionist works!</p>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+
+<nav class="navbar has-shadow">
+    <div class="container">
+        <div class="navbar-brand"><a>
+                <h2 class="subtitle"></h2>
+            </a>
+            <div class="navbar-burger burger" data-target="navMenu"><span></span><span></span><span></span></div>
+        </div>
+        <div class="navbar-menu" id="navMenu">
+            <div class="navbar-end">
+                <div class="navbar-item has-dropdown is-hoverable"><a class="navbar-link">Account</a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item">Profile</a>
+                        <hr class="navbar-divider" />
+                        <div class="navbar-item">Logout</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<section class="hero is-primary">
+    <div class="hero-body">
+        <div class="container">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input is-large" type="search"  placeholder="Search Patient" [(ngModel)]=searchPatient/>
+                            <span class="icon is-medium is-left">
+                                <i class="ri-search-2-line" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="box cta">
+    <div class="columns is-mobile is-centered">
+        <p class="subtitle"> total Patients: to fill</p>
+    </div>
+</div>
+<div class="columns " style="padding-left: 5rem; padding-right: 5rem;">
+    <div class="column ">
+        <article class="message is-info">
+            <div class="message-header">
+                <p>Ward 23</p>
+                <button class="button">Edit</button>
+            </div>
+            <div class="message-body" style="padding-top: 5px;padding-bottom: 5px;" *ngFor="let patient of getPatientsWardOne() | filter:searchPatient:1">
+                <div class="card">
+                   
+                    <div class="card-content">
+                        <div class="content">
+                            {{patient.name}}
+                            {{patient.fathersName}}
+                        </div>
+                        
+                    </div>
+                    <footer class="card-footer">
+                        <p class="card-footer-item">
+                            <span>
+                                Bed :{{patient.bed}}
+                            </span>
+                        </p>
+                        <p class="card-footer-item">
+                            <span>
+                                Days Admitteed:5
+                            </span>
+                        </p>
+                    </footer>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    
+
+    
+
+    <div class="column ">
+        <article class="message is-link">
+            <div class="message-header">
+                <p>Ward 23</p>
+                <button class="button">Edit</button>
+            </div>
+            <div class="message-body" style="padding-top: 5px;padding-bottom: 5px;" *ngFor="let patient of getPatientsWardThree() | filter:searchPatient:1">
+                <div class="card">
+                   
+                    <div class="card-content">
+                        <div class="content">
+                            {{patient.name}}
+                            {{patient.fathersName}}
+                        </div>
+                        
+                    </div>
+                    <footer class="card-footer">
+                        <p class="card-footer-item">
+                            <span>
+                                Bed :{{patient.bed}}
+                            </span>
+                        </p>
+                        <p class="card-footer-item">
+                            <span>
+                                Days Admitteed:5
+                            </span>
+                        </p>
+                    </footer>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <div class="column ">
+        <article class="message is-primary">
+            <div class="message-header">
+                <p>Ward 23</p>
+                <button class="button">Edit</button>
+            </div>
+            <div class="message-body" style="padding-top: 5px;padding-bottom: 5px;" *ngFor="let patient of getPatientsWardFour() | filter:searchPatient:1">
+                <div class="card">
+                   
+                    <div class="card-content">
+                        <div class="content">
+                            {{patient.name}}
+                            {{patient.fathersName}}
+                        </div>
+                        
+                    </div>
+                    <footer class="card-footer">
+                        <p class="card-footer-item">
+                            <span>
+                                Bed :{{patient.bed}}
+                            </span>
+                        </p>
+                        <p class="card-footer-item">
+                            <span>
+                                Days Admitteed:5
+                            </span>
+                        </p>
+                    </footer>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <div class="column ">
+        <article class="message is-danger">
+            <div class="message-header">
+                <p>Ward 23</p>
+                <button class="button">Edit</button>
+            </div>
+            <div class="message-body" style="padding-top: 5px;padding-bottom: 5px;" *ngFor="let patient of getPatientsWardTwo() | filter:searchPatient:1">
+                <div class="card">
+                   
+                    <div class="card-content">
+                        <div class="content">
+                            {{patient.name}}
+                            {{patient.fathersName}}
+                        </div>
+                        
+                    </div>
+                    <footer class="card-footer">
+                        <p class="card-footer-item">
+                            <span>
+                                Bed :{{patient.bed}}
+                            </span>
+                        </p>
+                        <p class="card-footer-item">
+                            <span>
+                                Days Admitteed:5
+                            </span>
+                        </p>
+                    </footer>
+                </div>
+            </div>
+        </article>
+    </div>
+</div>

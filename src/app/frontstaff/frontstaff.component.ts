@@ -8,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class FrontstaffComponent implements OnInit {
 
   constructor() { }
-
+  //add new nurse/staff
+  //patient details
+  //take payment
+  //add new patient
+  //print final patint
   ngOnInit(): void {
   }
 
